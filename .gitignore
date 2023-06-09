@@ -1,0 +1,7 @@
+# ignore notebook, image and pyhton files
+*.ipynb
+*.png
+*.py
+
+# not sure what this is!
+NOTHERE/
