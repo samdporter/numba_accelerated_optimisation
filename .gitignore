@@ -1,7 +1,20 @@
 # ignore notebook, image and pyhton files
-*.ipynb
-*.png
-*.py
+**/*.ipynb
+**/*.png
+**/*.pyc
 
 # not sure what this is!
 NOTHERE/
+
+# gitignore file
+
+# all .pytest_cache directories
+**/.pytest_cache/
+
+# all cache directories
+**/cache/
+**/__pycache__/
+
+# all data
+**/*.npy
+
