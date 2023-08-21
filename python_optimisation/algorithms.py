@@ -280,7 +280,7 @@ class PDHG(Primal_Dual_3Splitting):
         
         super(PDHG, self).__init__()
 
-    def set_up(self, initial, g, h, operator, tau, sigma, theta = 1, rho=0.999,
+    def set_up(self, p_initial, d_initial, g, h, operator, tau, sigma, theta = 1, rho=0.999,
                adaptivity = 0, max_iterations=10, save_interval=1, adapt_interval=1,
                lower_bound=0):
 
@@ -299,11 +299,11 @@ class PDHG(Primal_Dual_3Splitting):
         self.max_iterations = max_iterations
         self.save_interval = save_interval
 
-        self.x = initial
+        self.x = p_initial
         self.x_bar = self.x.copy()
         self.x_old = self.x.copy()
 
-        self.s = self.operator.direct(self.x)
+        self.s = d_initial
         self.s_old = self.s.copy()
 
         if self.adaptivity == 0:
